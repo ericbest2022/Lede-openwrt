@@ -195,7 +195,7 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         VERSION1="${REPO_BRANCH#*-}"
-        echo -e "🎉 360t7-lede\n✅ ${VERSION1} 源码\n❗️ ip地址 : 192.168.66.1" >> release.txt
+        echo -e "🎉 360t7 Rutter\n✅ ${VERSION1} 源码\n❗️ ip地址 : 192.168.66.1" >> release.txt
         echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_360t7_lede")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
