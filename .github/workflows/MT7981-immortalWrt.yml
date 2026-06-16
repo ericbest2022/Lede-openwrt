@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: MT7981-immortalWrt
+name: MT7981-lede
 
 permissions: write-all
 #开启写权限，防止无法上传到release
@@ -22,8 +22,8 @@ on:
         # 分,时,日,月,周。每周 四 20时执行一次 (UTC时间)
   
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: openwrt-25.12
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: MT7981.config
   DIY_P1_SH: diy-part1.sh
@@ -196,7 +196,7 @@ jobs:
       run: |
         VERSION1="${REPO_BRANCH#*-}"
         echo -e "🎉 MTK MT7981 平台\n✅ ${VERSION1} 源码\n❗️ ip地址 : 192.168.66.1" >> release.txt
-        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_MT7981_immortalWrt2512")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_MT7981_lede")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 上传固件到发布
