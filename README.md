@@ -1,4 +1,4 @@
-# LEDE
+# LEDE 24.10.6
 - Cudy TR3000
 - 360T7
 
